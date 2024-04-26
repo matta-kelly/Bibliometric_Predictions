@@ -13,9 +13,6 @@ def read_and_preprocess(file_path):
     # Read the CSV file into a pandas DataFrame
     df = pd.read_csv(file_path, sep='\t', encoding='utf-8')  # Assuming tab-delimited, adjust if necessary
 
-
-
-
     # Preprocess individual columns as needed, here are some examples:
 
     # Preprocessing 'Authors' column (splitting string into a list)
@@ -30,5 +27,5 @@ def read_and_preprocess(file_path):
     return df
 
 # Usage
-file_path = 'C:/Users/matta/.vscode/BibliometricNetwork/data'  # Replace with your actual file path
+file_path = 'C:/Users/matta/.vscode/BibliometricNetwork/data'  
 publications_df = read_and_preprocess(file_path)
