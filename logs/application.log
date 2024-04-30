@@ -1,0 +1,60 @@
+2024-04-30 21:14:39,224 - INFO - Database initialized successfully.
+2024-04-30 21:14:39,224 - INFO - Processing file: data/WOS_data/CSV/merged.csv
+2024-04-30 21:14:39,224 - INFO - Reading data from data/WOS_data/CSV/merged.csv
+2024-04-30 21:14:39,263 - INFO - Data read successfully
+2024-04-30 21:14:39,285 - INFO - Data preprocessing completed for data/WOS_data/CSV/merged.csv
+2024-04-30 21:14:39,285 - INFO - Connected to database successfully.
+2024-04-30 21:14:39,289 - ERROR - Database error occurred: UNIQUE constraint failed: papers.doi
+2024-04-30 21:14:39,289 - INFO - Database connection closed.
+2024-04-30 21:14:39,289 - INFO - Completed processing and insertion for file: data/WOS_data/CSV/merged.csv
+2024-04-30 21:19:20,591 - INFO - Database initialized successfully.
+2024-04-30 21:19:20,591 - INFO - Processing file: data/WOS_data/CSV/merged.csv
+2024-04-30 21:19:20,591 - INFO - Reading data from data/WOS_data/CSV/merged.csv
+2024-04-30 21:19:20,637 - INFO - Data read successfully
+2024-04-30 21:19:20,659 - INFO - Data preprocessing completed for data/WOS_data/CSV/merged.csv
+2024-04-30 21:19:20,660 - INFO - Connected to database successfully.
+2024-04-30 21:19:20,668 - INFO - Data inserted into papers table successfully.
+2024-04-30 21:19:20,669 - INFO - Paper DOIs retrieved successfully.
+2024-04-30 21:19:20,679 - INFO - Authors data inserted successfully.
+2024-04-30 21:19:20,683 - INFO - Author IDs retrieved successfully.
+2024-04-30 21:19:20,692 - INFO - Keywords inserted successfully.
+2024-04-30 21:19:20,696 - INFO - Keyword IDs retrieved successfully.
+2024-04-30 21:19:20,701 - INFO - Publishers data inserted successfully.
+2024-04-30 21:19:20,701 - INFO - Publisher IDs retrieved successfully.
+2024-04-30 21:19:20,707 - INFO - Institutions data inserted successfully.
+2024-04-30 21:19:20,709 - INFO - Institution IDs retrieved successfully.
+2024-04-30 21:19:22,889 - INFO - Authorship data inserted successfully.
+2024-04-30 21:19:25,770 - INFO - Paper keywords data inserted successfully.
+2024-04-30 21:19:25,770 - INFO - All database transactions committed successfully.
+2024-04-30 21:19:25,770 - INFO - Database connection closed.
+2024-04-30 21:19:25,771 - INFO - Completed processing and insertion for file: data/WOS_data/CSV/merged.csv
+2024-04-30 21:36:31,368 - INFO - Database initialized successfully.
+2024-04-30 21:36:31,368 - INFO - Processing file: data/WOS_data/CSV/merged.csv
+2024-04-30 21:36:31,368 - INFO - Reading data from data/WOS_data/CSV/merged.csv
+2024-04-30 21:36:31,408 - INFO - Data read successfully
+2024-04-30 21:36:31,431 - INFO - Data preprocessing completed for data/WOS_data/CSV/merged.csv
+2024-04-30 21:36:31,432 - INFO - Connected to database successfully.
+2024-04-30 21:36:31,440 - INFO - Data inserted into papers table successfully.
+2024-04-30 21:36:31,442 - INFO - Paper DOIs retrieved successfully.
+2024-04-30 21:36:31,453 - INFO - Authors data inserted successfully.
+2024-04-30 21:36:31,457 - INFO - Author IDs retrieved successfully.
+2024-04-30 21:36:31,467 - INFO - Keywords inserted successfully.
+2024-04-30 21:36:31,471 - INFO - Keyword IDs retrieved successfully.
+2024-04-30 21:36:31,475 - INFO - Publishers data inserted successfully.
+2024-04-30 21:36:31,475 - INFO - Publisher IDs retrieved successfully.
+2024-04-30 21:36:31,481 - INFO - Institutions data inserted successfully.
+2024-04-30 21:36:31,483 - INFO - Institution IDs retrieved successfully.
+2024-04-30 21:36:33,673 - INFO - Authorship data inserted successfully.
+2024-04-30 21:36:36,582 - INFO - Paper keywords data inserted successfully.
+2024-04-30 21:36:36,582 - INFO - All database transactions committed successfully.
+2024-04-30 21:36:36,582 - INFO - Database connection closed.
+2024-04-30 21:36:36,583 - INFO - Completed processing and insertion for file: data/WOS_data/CSV/merged.csv
+2024-04-30 22:21:33,851 - INFO - Database initialized successfully.
+2024-04-30 22:21:33,851 - INFO - Processing file: data/WOS_data/CSV/merged.csv
+2024-04-30 22:21:33,851 - INFO - Reading data from data/WOS_data/CSV/merged.csv
+2024-04-30 22:21:33,891 - INFO - Data read successfully
+2024-04-30 22:21:33,914 - INFO - Data preprocessing completed for data/WOS_data/CSV/merged.csv
+2024-04-30 22:21:33,915 - INFO - Connected to database successfully.
+2024-04-30 22:21:33,916 - ERROR - Database error occurred: UNIQUE constraint failed: papers.doi
+2024-04-30 22:21:33,916 - INFO - Database connection closed.
+2024-04-30 22:21:33,916 - INFO - Completed processing and insertion for file: data/WOS_data/CSV/merged.csv
