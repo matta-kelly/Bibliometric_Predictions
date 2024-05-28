@@ -118,3 +118,19 @@
 2024-05-10 16:07:34,570 - DEBUG - urllib3.connectionpool - https://api.elsevier.com:443 "GET /content/abstract/doi/10.1016/j.resconrec.2017.09.005?view=REF HTTP/1.1" 200 None
 2024-05-10 16:07:34,576 - INFO - __main__ - Successfully fetched cited DOIs for DOI 10.1016/j.resconrec.2017.09.005: []
 2024-05-10 16:07:34,581 - WARNING - __main__ - No cited DOIs retrieved or error occurred.
+2024-05-28 10:00:18,284 - DEBUG - __main__ - Testing DOI data fetch for: 10.1016/j.resconrec.2017.09.005
+2024-05-28 10:00:18,285 - DEBUG - __main__ - Fetching cited DOIs for DOI: 10.1016/j.resconrec.2017.09.005
+2024-05-28 10:00:18,293 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.elsevier.com:443
+2024-05-28 10:00:24,915 - DEBUG - urllib3.connectionpool - https://api.elsevier.com:443 "GET /content/abstract/doi/10.1016/j.resconrec.2017.09.005?view=REF HTTP/1.1" 401 203
+2024-05-28 10:00:24,917 - ERROR - __main__ - Failed to fetch cited DOIs for DOI 10.1016/j.resconrec.2017.09.005. Status Code: 401
+2024-05-28 10:00:24,922 - WARNING - __main__ - No cited DOIs retrieved or error occurred.
+2024-05-28 10:05:08,630 - DEBUG - __main__ - Testing DOI data fetch for: 10.1016/j.resconrec.2017.09.005
+2024-05-28 10:05:08,631 - DEBUG - __main__ - Fetching cited DOIs for DOI: 10.1016/j.resconrec.2017.09.005
+2024-05-28 10:05:08,637 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.elsevier.com:443
+2024-05-28 10:05:09,474 - DEBUG - urllib3.connectionpool - https://api.elsevier.com:443 "GET /content/abstract/doi/10.1016/j.resconrec.2017.09.005?view=REF HTTP/1.1" 401 203
+2024-05-28 10:05:09,476 - ERROR - __main__ - Failed to fetch cited EIDs for DOI 10.1016/j.resconrec.2017.09.005. Status Code: 401
+2024-05-28 10:17:02,937 - DEBUG - __main__ - Testing DOI data fetch for: 10.1016/j.resconrec.2017.09.005
+2024-05-28 10:17:02,937 - DEBUG - __main__ - Fetching cited DOIs for DOI: 10.1016/j.resconrec.2017.09.005
+2024-05-28 10:17:02,950 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): api.elsevier.com:443
+2024-05-28 10:17:03,718 - DEBUG - urllib3.connectionpool - https://api.elsevier.com:443 "GET /content/abstract/doi/10.1016/j.resconrec.2017.09.005?view=REF HTTP/1.1" 401 203
+2024-05-28 10:17:03,720 - ERROR - __main__ - Failed to fetch cited EIDs for DOI 10.1016/j.resconrec.2017.09.005. Status Code: 401
