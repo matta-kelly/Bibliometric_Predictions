@@ -16,7 +16,7 @@ import pandas as pd
 setup_logging()  # Initialize logging
 
 
-def insert_data_to_db(df, db_path='data/project_data.db'):
+def insert_data_to_db(df, db_path=DATABASE_PATH):
     try:
         conn = sqlite3.connect(db_path)
         logging.info("Connected to database successfully.")
