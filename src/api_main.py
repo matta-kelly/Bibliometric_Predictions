@@ -1,16 +1,14 @@
 import sqlite3
-from api_utils import fetch_doi_data
+from api_utils import fetch_citations_by_doi, parse_citation_data
 from db_utils import is_doi_in_dataset, insert_citation
 from config import DATABASE_PATH
 import logging
+from logging_config import setup_logging  # Import the centralized logging setup
 
-# Configure logging
+# Apply centralized logging setup
+setup_logging()
+
 logger = logging.getLogger('api_main')
-logger.setLevel(logging.INFO)
-handler = logging.FileHandler('../logs/api_main.log')
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
 
 def get_all_dois(connection):
     """Retrieve all DOIs from the database to process."""
@@ -26,20 +24,22 @@ def main():
 
     try:
         # Fetch all DOIs from the database
-        dois = get_all_dois(connection)
-        logger.info(f"Retrieved {len(dois)} DOIs to process.")
+        test_doi = ["10.1108/jd-12-2013-0166"]  # Test with a list to simulate multiple DOIs
+        logger.info(f"Retrieved {len(test_doi)} DOIs to process.")
 
         # Process each DOI
-        for doi in dois:
-            result = fetch_doi_data(doi)
-            if result and 'search-results' in result and 'entry' in result['search-results']:
-                cited_dois = [entry['prism:doi'] for entry in result['search-results']['entry'] if 'prism:doi' in entry]
-                for cited_doi in cited_dois:
-                    if is_doi_in_dataset(cited_doi, connection):
-                        insert_citation(doi, cited_doi, connection)
-                        logger.info(f"Inserted citation from {doi} to {cited_doi}.")
+        for doi in test_doi:
+            citation_data = fetch_citations_by_doi(doi)
+            if citation_data:
+                parsed_citations = parse_citation_data(citation_data)
+                for citation in parsed_citations:
+                    citing_doi = citation['citing_doi']
+                    cited_doi = citation['cited_doi']
+                    if is_doi_in_dataset(citing_doi, connection) and is_doi_in_dataset(cited_doi, connection):
+                        insert_citation(citing_doi, cited_doi, connection)
+                        logger.info(f"Inserted citation from {citing_doi} to {cited_doi}.")
             else:
-                logger.warning(f"No data found for DOI {doi} or incorrect data format.")
+                logger.warning(f"No citation data found for DOI {doi}.")
     except Exception as e:
         logger.error(f"An error occurred: {str(e)}")
     finally:
