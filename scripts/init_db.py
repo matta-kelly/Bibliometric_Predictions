@@ -90,6 +90,7 @@ def create_database():
         CREATE TABLE IF NOT EXISTS citations (
             citing_paper_doi TEXT,
             cited_paper_doi TEXT,
+            PRIMARY KEY (citing_paper_doi, cited_paper_doi),
             FOREIGN KEY (citing_paper_doi) REFERENCES papers(doi),
             FOREIGN KEY (cited_paper_doi) REFERENCES papers(doi)
         )
