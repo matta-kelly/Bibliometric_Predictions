@@ -1,2 +1,4 @@
 *config_private.py
+*/logs
+*__pycache__
 

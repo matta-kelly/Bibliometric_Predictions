@@ -33,5 +33,10 @@ for table, query in sample_queries.items():
     result = execute_query(query)
     print(f"Sample data from {table}: {result}")
 
+# Query to find the date range of papers
+date_range_query = "SELECT MIN(publication_year), MAX(publication_year) FROM papers"
+date_range = execute_query(date_range_query)
+print(f"Date range of papers: {date_range[0][0]} to {date_range[0][1]}")
+
 # Close the database connection
 conn.close()
