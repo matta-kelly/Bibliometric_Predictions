@@ -2,7 +2,6 @@ import sys
 import os
 import logging
 from logging_config import setup_logging
-import sqlite3
 import pandas as pd
 import re
 

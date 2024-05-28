@@ -23,6 +23,14 @@ def insert_data_to_db(df, db_path='data/project_data.db'):
 
         c = conn.cursor()
 
+        # Convert text fields to lowercase
+        df['doi'] = df['doi'].str.lower()
+        df['title'] = df['title'].str.lower()
+        df['full_name'] = df['full_name'].apply(lambda x: [name.lower() for name in x])
+        df['keywords'] = df['keywords'].apply(lambda x: [keyword.lower() for keyword in x if keyword])
+        df['publisher'] = df['publisher'].str.lower()
+        df['institutions'] = df['institutions'].apply(lambda x: [institution.lower() for institution in x if institution])
+
         # Insert data into the papers table
         df[['doi', 'title', 'publication_year', 'times_cited']].to_sql('papers', conn, if_exists='append', index=False)
         logging.info("Data inserted into papers table successfully.")
@@ -34,6 +42,7 @@ def insert_data_to_db(df, db_path='data/project_data.db'):
         # Prepare and insert authors
         authors = set([item for sublist in df['full_name'] for item in sublist])
         author_df = pd.DataFrame({'full_name': list(authors)})
+        author_df['full_name'] = author_df['full_name'].str.lower()
         author_df.to_sql('authors', conn, if_exists='append', index=False)
         logging.info("Authors data inserted successfully.")
 
@@ -44,6 +53,7 @@ def insert_data_to_db(df, db_path='data/project_data.db'):
         # Insert keywords
         keywords = set([item for sublist in df['keywords'] for item in sublist])
         keyword_df = pd.DataFrame({'keyword': list(keywords)})
+        keyword_df['keyword'] = keyword_df['keyword'].str.lower()
         keyword_df.to_sql('keywords', conn, if_exists='append', index=False)
         logging.info("Keywords inserted successfully.")
 
@@ -54,6 +64,7 @@ def insert_data_to_db(df, db_path='data/project_data.db'):
         # Insert publishers
         publishers = set(df['publisher'].dropna())
         publisher_df = pd.DataFrame({'name': list(publishers)})
+        publisher_df['name'] = publisher_df['name'].str.lower()
         publisher_df.to_sql('publishers', conn, if_exists='append', index=False)
         logging.info("Publishers data inserted successfully.")
 
@@ -64,6 +75,7 @@ def insert_data_to_db(df, db_path='data/project_data.db'):
         # Insert institutions
         institutions = set([item for sublist in df['institutions'] for item in sublist if item])
         institution_df = pd.DataFrame({'name': list(institutions)})
+        institution_df['name'] = institution_df['name'].str.lower()
         institution_df.to_sql('institutions', conn, if_exists='append', index=False)
         logging.info("Institutions data inserted successfully.")
 
@@ -77,7 +89,7 @@ def insert_data_to_db(df, db_path='data/project_data.db'):
             paper_doi = row['doi']
             paper_id = paper_dois[paper_dois['doi'] == paper_doi].index[0] + 1  # Using DOI as paper ID
             for author in row['full_name']:
-                author_id = author_ids[author_ids['full_name'] == author].iloc[0]['id']
+                author_id = author_ids[author_ids['full_name'] == author.lower()].iloc[0]['id']
                 authorship.append((author_id, paper_id))
         authorship_df = pd.DataFrame(authorship, columns=['author_id', 'paper_id'])
         authorship_df.to_sql('authorship', conn, if_exists='append', index=False)
@@ -89,7 +101,7 @@ def insert_data_to_db(df, db_path='data/project_data.db'):
             paper_doi = row['doi']
             paper_id = paper_dois[paper_dois['doi'] == paper_doi].index[0] + 1  # Using DOI as paper ID
             for keyword in row['keywords']:
-                keyword_id = keyword_ids[keyword_ids['keyword'] == keyword].iloc[0]['id']
+                keyword_id = keyword_ids[keyword_ids['keyword'] == keyword.lower()].iloc[0]['id']
                 paper_keywords.append((paper_id, keyword_id))
         paper_keywords_df = pd.DataFrame(paper_keywords, columns=['paper_id', 'keyword_id'])
         paper_keywords_df.to_sql('paper_keywords', conn, if_exists='append', index=False)
@@ -116,4 +128,3 @@ if __name__ == "__main__":
         logging.info("All files processed and inserted successfully.")
     except Exception as e:
         logging.error(f"Failed to process and insert data: {e}")
-
