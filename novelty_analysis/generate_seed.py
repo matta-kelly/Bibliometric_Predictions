@@ -9,8 +9,9 @@ import pickle
 import matplotlib.pyplot as plt
 import logging
 import nltk
+import scipy
 
-# Download NLTK resources if not already downloaded
+# Download NLTK resources if not already downloaded --> only run once
 #nltk.download('stopwords')
 #nltk.download('punkt')
 
@@ -80,7 +81,7 @@ def visualize_seed_graph(seed_graph):
 
 def main():
     # Configuration
-    datatype = 'keyword'  # Change to 'title' to process titles
+    datatype = 'title'  # Change to 'title' to process titles
     seed_start_year = 2000
     seed_end_year = 2010
 
