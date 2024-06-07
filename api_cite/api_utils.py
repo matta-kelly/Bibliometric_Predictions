@@ -2,6 +2,7 @@ import sys
 import os
 import logging
 import requests
+from scholarly import scholarly
 from config_private import API_KEY  # Import the API key securely
 
 # Append the directory above 'src' to sys.path to allow imports from the main project directory
@@ -54,3 +55,23 @@ def parse_citation_data(citation_data):
 
     return parsed_data
 
+def fetch_h_index(author_name):
+    """Fetch h-index information for an author using scholarly."""
+    try:
+        search_query = scholarly.search_author(author_name)
+        author = next(search_query, None)
+        if author:
+            author = scholarly.fill(author)
+            return {
+                "name": author_name,
+                "hindex": author.get('hindex', None),
+                "hindex5y": author.get('hindex5y', None),
+                "i10index": author.get('i10index', None),
+                "i10index5y": author.get('i10index5y', None)
+            }
+        else:
+            logger.warning(f"No author found for name: {author_name}")
+            return None
+    except Exception as e:
+        logger.error(f"Error fetching h-index for {author_name}: {str(e)}")
+        return None

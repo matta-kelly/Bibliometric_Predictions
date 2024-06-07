@@ -34,7 +34,11 @@ def create_database():
         CREATE TABLE IF NOT EXISTS authors (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             full_name TEXT,
-            h_index INTEGER
+            name TEXT,
+            hindex INTEGER,
+            hindex5y INTEGER,
+            i10index INTEGER,
+            i10index5y INTEGER
         )
     ''')
 
@@ -68,6 +72,7 @@ def create_database():
         CREATE TABLE IF NOT EXISTS authorship (
             author_id INTEGER,
             paper_id INTEGER,
+            h_index INTEGER,
             FOREIGN KEY (author_id) REFERENCES authors(id),
             FOREIGN KEY (paper_id) REFERENCES papers(id)
         )
@@ -78,6 +83,7 @@ def create_database():
         CREATE TABLE IF NOT EXISTS paper_keywords (
             paper_id INTEGER,
             keyword_id INTEGER,
+            citation_date TEXT,
             FOREIGN KEY (paper_id) REFERENCES papers(id),
             FOREIGN KEY (keyword_id) REFERENCES keywords(id)
         )

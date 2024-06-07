@@ -69,6 +69,10 @@ def read_and_preprocess(file_path):
             'keywords': df['Author Keywords'].apply(preprocess_keywords),
             'institutions': df['Affiliations'].apply(preprocess_institutions),
         })
+        
+        # Remove duplicate authors
+        processed_df['full_name'] = processed_df['full_name'].apply(lambda authors: list(set(authors)))
+        
         logging.info(f"Data preprocessing completed for {file_path}")
         return processed_df
     except Exception as e:
