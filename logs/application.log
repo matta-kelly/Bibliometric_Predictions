@@ -1841,3 +1841,225 @@
 2024-06-07 16:49:40,359 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/anie.201915651
 2024-06-07 16:49:40,360 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
 2024-06-07 16:49:41,356 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/anie.201915651 HTTP/1.1" 200 225828
+2024-06-07 16:49:47,751 - INFO - api_main - Database connection established.
+2024-06-07 16:49:47,753 - INFO - api_main - Retrieved 1419 DOIs to process.
+2024-06-07 16:49:47,753 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/aenm.202003456
+2024-06-07 16:49:47,756 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:48,206 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/aenm.202003456 HTTP/1.1" 200 42315
+2024-06-07 16:49:48,216 - INFO - api_main - Processed 1/1419 DOIs.
+2024-06-07 16:49:48,216 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/agr.21608
+2024-06-07 16:49:48,217 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:48,488 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/agr.21608 HTTP/1.1" 200 4832
+2024-06-07 16:49:48,489 - INFO - api_main - Processed 2/1419 DOIs.
+2024-06-07 16:49:48,489 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/anie.201915651
+2024-06-07 16:49:48,490 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:49,342 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/anie.201915651 HTTP/1.1" 200 225828
+2024-06-07 16:49:49,491 - INFO - db_utils - Inserted citation from 10.1002/marc.202000415 to 10.1002/anie.201915651.
+2024-06-07 16:49:49,501 - INFO - api_main - Processed 3/1419 DOIs.
+2024-06-07 16:49:49,501 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/asl.1001
+2024-06-07 16:49:49,502 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:49,759 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/asl.1001 HTTP/1.1" 200 2422
+2024-06-07 16:49:49,760 - INFO - api_main - Processed 4/1419 DOIs.
+2024-06-07 16:49:49,760 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.1906
+2024-06-07 16:49:49,761 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:50,488 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.1906 HTTP/1.1" 200 162882
+2024-06-07 16:49:50,578 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.118528 to 10.1002/bse.1906.
+2024-06-07 16:49:50,581 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.118531 to 10.1002/bse.1906.
+2024-06-07 16:49:50,584 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.118160 to 10.1002/bse.1906.
+2024-06-07 16:49:50,588 - INFO - db_utils - Inserted citation from 10.3390/su10030639 to 10.1002/bse.1906.
+2024-06-07 16:49:50,595 - INFO - db_utils - Inserted citation from 10.1016/j.jenvman.2020.110416 to 10.1002/bse.1906.
+2024-06-07 16:49:50,599 - INFO - db_utils - Inserted citation from 10.1108/jmtm-02-2018-0061 to 10.1002/bse.1906.
+2024-06-07 16:49:50,602 - INFO - db_utils - Inserted citation from 10.1111/jiec.12763 to 10.1002/bse.1906.
+2024-06-07 16:49:50,605 - INFO - db_utils - Inserted citation from 10.1111/jiec.12603 to 10.1002/bse.1906.
+2024-06-07 16:49:50,608 - INFO - db_utils - Inserted citation from 10.1016/j.procir.2017.03.012 to 10.1002/bse.1906.
+2024-06-07 16:49:50,615 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.117696 to 10.1002/bse.1906.
+2024-06-07 16:49:50,619 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.05.044 to 10.1002/bse.1906.
+2024-06-07 16:49:50,622 - INFO - db_utils - Inserted citation from 10.3390/su9101810 to 10.1002/bse.1906.
+2024-06-07 16:49:50,626 - INFO - db_utils - Inserted citation from 10.3390/su11082210 to 10.1002/bse.1906.
+2024-06-07 16:49:50,629 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2020.123741 to 10.1002/bse.1906.
+2024-06-07 16:49:50,633 - INFO - db_utils - Inserted citation from 10.1108/md-11-2018-1178 to 10.1002/bse.1906.
+2024-06-07 16:49:50,637 - INFO - db_utils - Inserted citation from 10.3390/su10082799 to 10.1002/bse.1906.
+2024-06-07 16:49:50,642 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.04.303 to 10.1002/bse.1906.
+2024-06-07 16:49:50,644 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.03.115 to 10.1002/bse.1906.
+2024-06-07 16:49:50,647 - INFO - db_utils - Inserted citation from 10.1080/00207543.2018.1542176 to 10.1002/bse.1906.
+2024-06-07 16:49:50,652 - INFO - db_utils - Inserted citation from 10.1002/bse.2554 to 10.1002/bse.1906.
+2024-06-07 16:49:50,655 - INFO - db_utils - Inserted citation from 10.1002/bse.2466 to 10.1002/bse.1906.
+2024-06-07 16:49:50,658 - INFO - db_utils - Inserted citation from 10.1002/bse.2447 to 10.1002/bse.1906.
+2024-06-07 16:49:50,662 - INFO - db_utils - Inserted citation from 10.1002/bse.2216 to 10.1002/bse.1906.
+2024-06-07 16:49:50,666 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.01.036 to 10.1002/bse.1906.
+2024-06-07 16:49:50,670 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2018.11.202 to 10.1002/bse.1906.
+2024-06-07 16:49:50,674 - INFO - db_utils - Inserted citation from 10.3390/su8111212 to 10.1002/bse.1906.
+2024-06-07 16:49:50,677 - INFO - db_utils - Inserted citation from 10.1002/bse.2048 to 10.1002/bse.1906.
+2024-06-07 16:49:50,681 - INFO - db_utils - Inserted citation from 10.1002/bse.1929 to 10.1002/bse.1906.
+2024-06-07 16:49:50,684 - INFO - db_utils - Inserted citation from 10.3390/su8090937 to 10.1002/bse.1906.
+2024-06-07 16:49:50,687 - INFO - db_utils - Inserted citation from 10.3390/su8010043 to 10.1002/bse.1906.
+2024-06-07 16:49:50,691 - INFO - db_utils - Inserted citation from 10.1016/j.resconrec.2020.105073 to 10.1002/bse.1906.
+2024-06-07 16:49:50,695 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2018.03.196 to 10.1002/bse.1906.
+2024-06-07 16:49:50,699 - INFO - db_utils - Inserted citation from 10.1016/j.jbusres.2019.01.006 to 10.1002/bse.1906.
+2024-06-07 16:49:50,702 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2017.11.064 to 10.1002/bse.1906.
+2024-06-07 16:49:50,706 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2017.09.047 to 10.1002/bse.1906.
+2024-06-07 16:49:50,710 - INFO - db_utils - Inserted citation from 10.1016/j.scitotenv.2020.137065 to 10.1002/bse.1906.
+2024-06-07 16:49:50,710 - INFO - api_main - Processed 5/1419 DOIs.
+2024-06-07 16:49:50,710 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.1929
+2024-06-07 16:49:50,711 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:51,230 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.1929 HTTP/1.1" 200 81556
+2024-06-07 16:49:51,275 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.118528 to 10.1002/bse.1929.
+2024-06-07 16:49:51,278 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.118198 to 10.1002/bse.1929.
+2024-06-07 16:49:51,287 - INFO - db_utils - Inserted citation from 10.1108/md-11-2018-1178 to 10.1002/bse.1929.
+2024-06-07 16:49:51,290 - INFO - db_utils - Inserted citation from 10.3390/su10082799 to 10.1002/bse.1929.
+2024-06-07 16:49:51,293 - INFO - db_utils - Inserted citation from 10.3390/su10082758 to 10.1002/bse.1929.
+2024-06-07 16:49:51,298 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.04.303 to 10.1002/bse.1929.
+2024-06-07 16:49:51,301 - INFO - db_utils - Inserted citation from 10.3390/su9091602 to 10.1002/bse.1929.
+2024-06-07 16:49:51,305 - INFO - db_utils - Inserted citation from 10.1002/bse.2466 to 10.1002/bse.1929.
+2024-06-07 16:49:51,308 - INFO - db_utils - Inserted citation from 10.1002/bse.2216 to 10.1002/bse.1929.
+2024-06-07 16:49:51,313 - INFO - db_utils - Inserted citation from 10.1080/00207543.2017.1402141 to 10.1002/bse.1929.
+2024-06-07 16:49:51,316 - INFO - db_utils - Inserted citation from 10.1002/bse.2048 to 10.1002/bse.1929.
+2024-06-07 16:49:51,321 - INFO - db_utils - Inserted citation from 10.1016/j.jbusres.2019.10.030 to 10.1002/bse.1929.
+2024-06-07 16:49:51,322 - INFO - api_main - Processed 6/1419 DOIs.
+2024-06-07 16:49:51,322 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.2048
+2024-06-07 16:49:51,323 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:51,766 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.2048 HTTP/1.1" 200 61422
+2024-06-07 16:49:51,814 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.118528 to 10.1002/bse.2048.
+2024-06-07 16:49:51,822 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.04.303 to 10.1002/bse.2048.
+2024-06-07 16:49:51,825 - INFO - db_utils - Inserted citation from 10.1002/bse.2554 to 10.1002/bse.2048.
+2024-06-07 16:49:51,829 - INFO - db_utils - Inserted citation from 10.1002/bse.2447 to 10.1002/bse.2048.
+2024-06-07 16:49:51,834 - INFO - db_utils - Inserted citation from 10.1002/pa.2319 to 10.1002/bse.2048.
+2024-06-07 16:49:51,838 - INFO - db_utils - Inserted citation from 10.1016/j.resconrec.2018.10.002 to 10.1002/bse.2048.
+2024-06-07 16:49:51,838 - INFO - api_main - Processed 7/1419 DOIs.
+2024-06-07 16:49:51,838 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.2216
+2024-06-07 16:49:51,839 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:52,303 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.2216 HTTP/1.1" 200 52764
+2024-06-07 16:49:52,352 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2020.123741 to 10.1002/bse.2216.
+2024-06-07 16:49:52,356 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2019.119137 to 10.1002/bse.2216.
+2024-06-07 16:49:52,360 - INFO - db_utils - Inserted citation from 10.1002/bse.2554 to 10.1002/bse.2216.
+2024-06-07 16:49:52,363 - INFO - db_utils - Inserted citation from 10.1002/bse.2466 to 10.1002/bse.2216.
+2024-06-07 16:49:52,366 - INFO - db_utils - Inserted citation from 10.1002/bse.2336 to 10.1002/bse.2216.
+2024-06-07 16:49:52,369 - INFO - api_main - Processed 8/1419 DOIs.
+2024-06-07 16:49:52,369 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.2246
+2024-06-07 16:49:52,370 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:52,855 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.2246 HTTP/1.1" 200 49466
+2024-06-07 16:49:52,898 - INFO - db_utils - Inserted citation from 10.1016/j.jclepro.2020.122944 to 10.1002/bse.2246.
+2024-06-07 16:49:52,903 - INFO - db_utils - Inserted citation from 10.1002/bse.2336 to 10.1002/bse.2246.
+2024-06-07 16:49:52,908 - INFO - db_utils - Inserted citation from 10.1016/j.resconrec.2020.104819 to 10.1002/bse.2246.
+2024-06-07 16:49:52,909 - INFO - api_main - Processed 9/1419 DOIs.
+2024-06-07 16:49:52,909 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.2336
+2024-06-07 16:49:52,910 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:53,367 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.2336 HTTP/1.1" 200 48124
+2024-06-07 16:49:53,408 - INFO - api_main - Processed 10/1419 DOIs.
+2024-06-07 16:49:53,408 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.2447
+2024-06-07 16:49:53,409 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:53,814 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.2447 HTTP/1.1" 200 41493
+2024-06-07 16:49:53,820 - INFO - db_utils - Citation from 10.1108/ijoa-04-2020-2120 to 10.1002/bse.2447 already exists, not inserted.
+2024-06-07 16:49:53,822 - INFO - db_utils - Citation from 10.1002/bse.2554 to 10.1002/bse.2447 already exists, not inserted.
+2024-06-07 16:49:53,824 - INFO - api_main - Processed 11/1419 DOIs.
+2024-06-07 16:49:53,824 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.2466
+2024-06-07 16:49:53,825 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:54,340 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.2466 HTTP/1.1" 200 82340
+2024-06-07 16:49:54,390 - INFO - db_utils - Citation from 10.1002/pa.2319 to 10.1002/bse.2466 already exists, not inserted.
+2024-06-07 16:49:54,392 - INFO - api_main - Processed 12/1419 DOIs.
+2024-06-07 16:49:54,392 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.2492
+2024-06-07 16:49:54,393 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:54,833 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.2492 HTTP/1.1" 200 48051
+2024-06-07 16:49:54,881 - INFO - api_main - Processed 13/1419 DOIs.
+2024-06-07 16:49:54,881 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/bse.2554
+2024-06-07 16:49:54,882 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:55,351 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/bse.2554 HTTP/1.1" 200 69221
+2024-06-07 16:49:55,399 - INFO - api_main - Processed 14/1419 DOIs.
+2024-06-07 16:49:55,399 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/csr.1761
+2024-06-07 16:49:55,400 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:55,817 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/csr.1761 HTTP/1.1" 200 41174
+2024-06-07 16:49:55,823 - INFO - db_utils - Citation from 10.1002/bse.2447 to 10.1002/csr.1761 already exists, not inserted.
+2024-06-07 16:49:55,826 - INFO - api_main - Processed 15/1419 DOIs.
+2024-06-07 16:49:55,826 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/csr.274
+2024-06-07 16:49:55,827 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:56,262 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/csr.274 HTTP/1.1" 200 52435
+2024-06-07 16:49:56,308 - INFO - api_main - Processed 16/1419 DOIs.
+2024-06-07 16:49:56,308 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/dac.4643
+2024-06-07 16:49:56,309 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:56,571 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/dac.4643 HTTP/1.1" 200 3457
+2024-06-07 16:49:56,572 - INFO - api_main - Processed 17/1419 DOIs.
+2024-06-07 16:49:56,572 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/er.3313
+2024-06-07 16:49:56,574 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:56,849 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/er.3313 HTTP/1.1" 200 2748
+2024-06-07 16:49:56,850 - INFO - api_main - Processed 18/1419 DOIs.
+2024-06-07 16:49:56,850 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/ett.3125
+2024-06-07 16:49:56,851 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:57,104 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/ett.3125 HTTP/1.1" 200 7265
+2024-06-07 16:49:57,106 - INFO - api_main - Processed 19/1419 DOIs.
+2024-06-07 16:49:57,106 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/gsj.1364
+2024-06-07 16:49:57,107 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:57,529 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/gsj.1364 HTTP/1.1" 200 45394
+2024-06-07 16:49:57,569 - INFO - api_main - Processed 20/1419 DOIs.
+2024-06-07 16:49:57,569 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/int.21679
+2024-06-07 16:49:57,570 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:57,855 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/int.21679 HTTP/1.1" 200 7985
+2024-06-07 16:49:57,857 - INFO - api_main - Processed 21/1419 DOIs.
+2024-06-07 16:49:57,857 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/jgrd.50487
+2024-06-07 16:49:57,858 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:58,186 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/jgrd.50487 HTTP/1.1" 200 16714
+2024-06-07 16:49:58,189 - INFO - db_utils - Citation from 10.1029/2018jd029974 to 10.1002/jgrd.50487 already exists, not inserted.
+2024-06-07 16:49:58,190 - INFO - api_main - Processed 22/1419 DOIs.
+2024-06-07 16:49:58,190 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/jid.3363
+2024-06-07 16:49:58,191 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:58,397 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/jid.3363 HTTP/1.1" 200 1743
+2024-06-07 16:49:58,399 - INFO - db_utils - Citation from 10.3390/su12135462 to 10.1002/jid.3363 already exists, not inserted.
+2024-06-07 16:49:58,399 - INFO - api_main - Processed 23/1419 DOIs.
+2024-06-07 16:49:58,399 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/ldr.3257
+2024-06-07 16:49:58,400 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:58,729 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/ldr.3257 HTTP/1.1" 200 14304
+2024-06-07 16:49:58,732 - INFO - api_main - Processed 24/1419 DOIs.
+2024-06-07 16:49:58,732 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/ldr.3754
+2024-06-07 16:49:58,733 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:59,005 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/ldr.3754 HTTP/1.1" 200 1432
+2024-06-07 16:49:59,006 - INFO - api_main - Processed 25/1419 DOIs.
+2024-06-07 16:49:59,006 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/marc.202000415
+2024-06-07 16:49:59,007 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:59,609 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/marc.202000415 HTTP/1.1" 200 148252
+2024-06-07 16:49:59,707 - INFO - api_main - Processed 26/1419 DOIs.
+2024-06-07 16:49:59,707 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/nml.21204
+2024-06-07 16:49:59,708 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:49:59,911 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/nml.21204 HTTP/1.1" 200 3491
+2024-06-07 16:49:59,913 - INFO - db_utils - Citation from 10.1080/03623319.2020.1799174 to 10.1002/nml.21204 already exists, not inserted.
+2024-06-07 16:49:59,913 - INFO - db_utils - Citation from 10.3390/su9081427 to 10.1002/nml.21204 already exists, not inserted.
+2024-06-07 16:49:59,913 - INFO - api_main - Processed 27/1419 DOIs.
+2024-06-07 16:49:59,913 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/pa.2319
+2024-06-07 16:49:59,914 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:00,149 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/pa.2319 HTTP/1.1" 200 4815
+2024-06-07 16:50:00,150 - INFO - api_main - Processed 28/1419 DOIs.
+2024-06-07 16:50:00,150 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/poi3.177
+2024-06-07 16:50:00,151 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:00,479 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/poi3.177 HTTP/1.1" 200 18506
+2024-06-07 16:50:00,483 - INFO - api_main - Processed 29/1419 DOIs.
+2024-06-07 16:50:00,483 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/poi3.220
+2024-06-07 16:50:00,484 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:00,733 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/poi3.220 HTTP/1.1" 200 3145
+2024-06-07 16:50:00,735 - INFO - api_main - Processed 30/1419 DOIs.
+2024-06-07 16:50:00,735 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/sd.2031
+2024-06-07 16:50:00,736 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:00,983 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/sd.2031 HTTP/1.1" 200 3483
+2024-06-07 16:50:00,984 - INFO - api_main - Processed 31/1419 DOIs.
+2024-06-07 16:50:00,984 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/sd.374
+2024-06-07 16:50:00,985 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:01,247 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/sd.374 HTTP/1.1" 200 7213
+2024-06-07 16:50:01,248 - INFO - db_utils - Citation from 10.1093/jeg/lbq050 to 10.1002/sd.374 already exists, not inserted.
+2024-06-07 16:50:01,249 - INFO - db_utils - Citation from 10.3390/su9081427 to 10.1002/sd.374 already exists, not inserted.
+2024-06-07 16:50:01,249 - INFO - api_main - Processed 32/1419 DOIs.
+2024-06-07 16:50:01,249 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/sea2.12136
+2024-06-07 16:50:01,250 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:01,524 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/sea2.12136 HTTP/1.1" 200 8724
+2024-06-07 16:50:01,526 - INFO - api_main - Processed 33/1419 DOIs.
+2024-06-07 16:50:01,526 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/sej.1279
+2024-06-07 16:50:01,527 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:01,906 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/sej.1279 HTTP/1.1" 200 24823
+2024-06-07 16:50:01,910 - INFO - db_utils - Citation from 10.1111/jpim.12526 to 10.1002/sej.1279 already exists, not inserted.
+2024-06-07 16:50:01,911 - INFO - db_utils - Citation from 10.1002/smj.3262 to 10.1002/sej.1279 already exists, not inserted.
+2024-06-07 16:50:01,911 - INFO - db_utils - Citation from 10.1002/smj.3142 to 10.1002/sej.1279 already exists, not inserted.
+2024-06-07 16:50:01,911 - INFO - api_main - Processed 34/1419 DOIs.
+2024-06-07 16:50:01,911 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/sej.1298
+2024-06-07 16:50:01,912 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:02,361 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/sej.1298 HTTP/1.1" 200 35042
+2024-06-07 16:50:02,366 - INFO - db_utils - Citation from 10.1016/j.jclepro.2019.119942 to 10.1002/sej.1298 already exists, not inserted.
+2024-06-07 16:50:02,366 - INFO - db_utils - Citation from 10.1111/jpim.12526 to 10.1002/sej.1298 already exists, not inserted.
+2024-06-07 16:50:02,368 - INFO - api_main - Processed 35/1419 DOIs.
+2024-06-07 16:50:02,368 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/smj.3142
+2024-06-07 16:50:02,369 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
