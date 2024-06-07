@@ -20,8 +20,6 @@ def create_database():
             title TEXT,
             publication_year INTEGER,
             times_cited INTEGER,
-            title_novelty REAL,
-            keyword_novelty REAL,
             publisher_id INTEGER,
             journal_id INTEGER,
             institution_id INTEGER,
