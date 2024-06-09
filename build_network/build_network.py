@@ -1,94 +1,79 @@
 import pandas as pd
-import sqlite3
 import torch
 from torch_geometric.data import HeteroData
-from network_preprocess import preprocess_data, preprocess_features
+from torch_geometric.transforms import ToUndirected
+import sqlite3
+import json
 
-# Adjust sys.path before any other imports
-import os
-import sys
-current_path = os.path.abspath(os.path.dirname(__file__))
-project_root = os.path.abspath(os.path.join(current_path, '..'))
-sys.path.insert(0, project_root)
 from config import DATABASE_PATH
 
-# Database connection setup
-conn = sqlite3.connect(DATABASE_PATH)
-
-def load_data(table_name, connection):
-    """Load all columns for a table dynamically."""
+# Function to load data from a specific table
+def load_data_from_db(table_name, connection):
     query = f"SELECT * FROM {table_name}"
     return pd.read_sql_query(query, connection)
 
-def get_primary_key(column_info):
-    """Identify and return the primary key based on column info."""
-    for column in column_info:
-        if column[5]:  # The sixth element is the 'pk' indicator (1 if true)
-            return column[1]  # The second element is the column name
-    return None
+# Connect to the database
+conn = sqlite3.connect(DATABASE_PATH)
 
-def get_foreign_keys(connection):
-    """Retrieve all foreign key relationships from the database dynamically."""
-    cursor = connection.cursor()
-    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-    tables = cursor.fetchall()
-    
-    edge_specs = []
-    for (table,) in tables:
-        cursor.execute(f"PRAGMA table_info({table})")
-        column_info = cursor.fetchall()
-        primary_key = get_primary_key(column_info)
+# Load data
+papers_df = load_data_from_db('Papers', conn)
+authors_df = load_data_from_db('Authors', conn)
+keywords_df = load_data_from_db('Keywords', conn)
+authorship_df = load_data_from_db('Authorship', conn)
+citations_df = load_data_from_db('Citations', conn)
+paper_keywords_df = load_data_from_db('PaperKeywords', conn)
+journals_df = load_data_from_db('Journals', conn)
 
-        cursor.execute(f"PRAGMA foreign_key_list({table})")
-        fks = cursor.fetchall()
-        for fk in fks:
-            src_table = table
-            dst_table = fk[2]
-            src_col = primary_key if primary_key else fk[3]
-            dst_col = fk[4]
-            if src_table in tables and dst_table in tables:  # Ensure both tables are present
-                edge_specs.append((src_table, dst_table, src_col, dst_col))
-    return edge_specs
-
-# Load all tables dynamically
-tables = [table[0] for table in conn.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall()]
-nodes = {table: load_data(table, conn) for table in tables}
-
-# Preprocess node data
-nodes = preprocess_data(nodes)
-
-# Dynamic edge specifications based on foreign keys
-edge_specs = get_foreign_keys(conn)
-
-# Construct HeteroData dynamically
+# Initialize the HeteroData object
 data = HeteroData()
-for node_type, df in nodes.items():
-    primary_key = get_primary_key(conn.execute(f"PRAGMA table_info({node_type})").fetchall())
-    if primary_key is None:
-        primary_key = df.columns[0]  # Default to the first column if primary key is not present
 
-    # Preprocess DataFrame features
-    processed_df = preprocess_features(df.drop(primary_key, axis=1))
+# Add nodes for Papers
+data['paper'].x = torch.tensor(papers_df.drop(columns=['doi', 'title', 'title_embedding']).values, dtype=torch.float)
+data['paper'].node_id = torch.tensor(papers_df['doi'].values, dtype=torch.long)
 
-    # Handle primary key conversion
-    if df[primary_key].dtype == 'object':
-        df[primary_key], _ = pd.factorize(df[primary_key])
+# Add nodes for Authors
+data['author'].x = torch.tensor(authors_df.drop(columns=['author_id']).values, dtype=torch.float)
+data['author'].node_id = torch.tensor(authors_df['author_id'].values, dtype=torch.long)
 
-    # Convert to tensor
-    data[node_type].x = torch.tensor(processed_df.values, dtype=torch.float)
-    data[node_type].node_id = torch.tensor(df[primary_key].values, dtype=torch.int)
+# Add nodes for Keywords
+data['keyword'].x = torch.tensor(keywords_df.drop(columns=['id']).values, dtype=torch.float)
+data['keyword'].node_id = torch.tensor(keywords_df['id'].values, dtype=torch.long)
 
-# Setup edges in HeteroData
-for (src_table, dst_table, src_col, dst_col) in edge_specs:
-    query = f"SELECT {src_col}, {dst_col} FROM {src_table}"
-    df = pd.read_sql_query(query, conn)
-    src_indices = pd.Index(nodes[src_table][src_col])
-    dst_indices = pd.Index(nodes[dst_table][dst_col])
-    source_indices = src_indices.get_indexer(df[src_col])
-    target_indices = dst_indices.get_indexer(df[dst_col])
+# Add nodes for Journals
+data['journal'].x = torch.tensor(journals_df.drop(columns=['journal_id']).values, dtype=torch.float)
+data['journal'].node_id = torch.tensor(journals_df['journal_id'].values, dtype=torch.long)
 
-    edge_index = torch.tensor([source_indices, target_indices], dtype=torch.long)
-    data[src_table, dst_table].edge_index = edge_index
+# Add edges for Authorship (author <-> paper)
+source_author = authorship_df['author_id'].values
+target_paper = authorship_df['doi'].values
+data['author', 'writes', 'paper'].edge_index = torch.tensor([source_author, target_paper], dtype=torch.long)
 
-# Verify data structure
+# Add edges for Citations (paper -> paper)
+source_cite = citations_df['citing_doi'].values
+target_cite = citations_df['cited_doi'].values
+data['paper', 'cites', 'paper'].edge_index = torch.tensor([source_cite, target_cite], dtype=torch.long)
+
+# Add edges for PaperKeywords (paper <-> keyword)
+source_keyword = paper_keywords_df['paper_id'].values
+target_keyword = paper_keywords_df['keyword_id'].values
+data['paper', 'has', 'keyword'].edge_index = torch.tensor([source_keyword, target_keyword], dtype=torch.long)
+
+# Add edges for Journals (journal <-> paper)
+source_journal = papers_df['journal_id'].values
+target_journal = papers_df['doi'].values
+data['journal', 'publishes', 'paper'].edge_index = torch.tensor([source_journal, target_journal], dtype=torch.long)
+
+# Print the edges before applying ToUndirected to ensure they are correct
+print("Edges before ToUndirected:")
 print(data)
+
+# Convert undirected edges for all except the 'cites' relationship
+undirected_edge_types = [('author', 'writes', 'paper'), ('paper', 'has', 'keyword'), ('journal', 'publishes', 'paper')]
+for edge_type in undirected_edge_types:
+    data = ToUndirected()(data, edge_types=[edge_type])
+
+# Verify the structure of the heterogeneous data object after transformation
+print("Edges after ToUndirected:")
+#print(data)
+
+conn.close()

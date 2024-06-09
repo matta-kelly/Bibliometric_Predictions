@@ -1,7 +1,11 @@
 import sqlite3
+import pandas as pd
+
+# Path to your database
+DATABASE_PATH = 'data/project_data.db'
 
 # Connect to the database
-conn = sqlite3.connect('data/project_data.db')
+conn = sqlite3.connect(DATABASE_PATH)
 
 # Define a function to execute SQL queries
 def execute_query(query):
@@ -12,31 +16,27 @@ def execute_query(query):
     return result
 
 # Count the number of rows in each table
-tables = ['papers', 'authors', 'keywords', 'publishers', 'institutions', 'authorship', 'paper_keywords', 'citations']
+tables = ['Papers', 'Authors', 'Keywords', 'Journals', 'Authorship', 'PaperKeywords', 'Citations']
 for table in tables:
     count_query = f"SELECT COUNT(*) FROM {table}"
     result = execute_query(count_query)
     print(f"Number of rows in {table}: {result[0][0]}")
 
-# Retrieve sample data from each table
+# Retrieve one full row of data from each table
 sample_queries = {
-    'papers': 'SELECT * FROM papers LIMIT 5',
-    'authors': 'SELECT * FROM authors LIMIT 5',
-    'keywords': 'SELECT * FROM keywords LIMIT 5',
-    'publishers': 'SELECT * FROM publishers LIMIT 5',
-    'institutions': 'SELECT * FROM institutions LIMIT 5',
-    'authorship': 'SELECT * FROM authorship LIMIT 5',
-    'paper_keywords': 'SELECT * FROM paper_keywords LIMIT 5',
-    'citations': 'SELECT * FROM citations LIMIT 5',
+    'Papers': 'SELECT * FROM Papers LIMIT 1',
+    'Authors': 'SELECT * FROM Authors LIMIT 1',
+    'Keywords': 'SELECT * FROM Keywords LIMIT 1',
+    'Journals': 'SELECT * FROM Journals LIMIT 1',
+    'Authorship': 'SELECT * FROM Authorship LIMIT 1',
+    'PaperKeywords': 'SELECT * FROM PaperKeywords LIMIT 1',
+    'Citations': 'SELECT * FROM Citations LIMIT 1',
 }
+
 for table, query in sample_queries.items():
     result = execute_query(query)
     print(f"Sample data from {table}: {result}")
 
-# Query to find the date range of papers
-date_range_query = "SELECT MIN(publication_year), MAX(publication_year) FROM papers"
-date_range = execute_query(date_range_query)
-print(f"Date range of papers: {date_range[0][0]} to {date_range[0][1]}")
 
 # Close the database connection
 conn.close()
