@@ -2063,3 +2063,61 @@
 2024-06-07 16:50:02,368 - INFO - api_main - Processed 35/1419 DOIs.
 2024-06-07 16:50:02,368 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/smj.3142
 2024-06-07 16:50:02,369 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:02,723 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/smj.3142 HTTP/1.1" 200 17481
+2024-06-07 16:50:02,726 - INFO - api_main - Processed 36/1419 DOIs.
+2024-06-07 16:50:02,726 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/smj.3262
+2024-06-07 16:50:02,727 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:02,968 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/smj.3262 HTTP/1.1" 200 8965
+2024-06-07 16:50:02,970 - INFO - api_main - Processed 37/1419 DOIs.
+2024-06-07 16:50:02,970 - DEBUG - api_utils - Fetching citations for DOI: 10.1002/wene.360
+2024-06-07 16:50:02,971 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:03,404 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1002/wene.360 HTTP/1.1" 200 49056
+2024-06-07 16:50:03,446 - INFO - db_utils - Citation from 10.1039/d0gc02630a to 10.1002/wene.360 already exists, not inserted.
+2024-06-07 16:50:03,449 - INFO - api_main - Processed 38/1419 DOIs.
+2024-06-07 16:50:03,449 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/978-3-030-32258-8_4
+2024-06-07 16:50:03,450 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:03,690 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/978-3-030-32258-8_4 HTTP/1.1" 200 5054
+2024-06-07 16:50:03,691 - INFO - api_main - Processed 39/1419 DOIs.
+2024-06-07 16:50:03,691 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/978-3-030-54455-3_28
+2024-06-07 16:50:03,692 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:03,913 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/978-3-030-54455-3_28 HTTP/1.1" 200 2489
+2024-06-07 16:50:03,914 - INFO - api_main - Processed 40/1419 DOIs.
+2024-06-07 16:50:03,914 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/978-3-319-69784-0_36
+2024-06-07 16:50:03,915 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:04,149 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/978-3-319-69784-0_36 HTTP/1.1" 200 3575
+2024-06-07 16:50:04,151 - INFO - api_main - Processed 41/1419 DOIs.
+2024-06-07 16:50:04,151 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/978-3-319-70942-0_25
+2024-06-07 16:50:04,152 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:04,424 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/978-3-319-70942-0_25 HTTP/1.1" 200 6895
+2024-06-07 16:50:04,425 - INFO - db_utils - Citation from 10.1080/19186444.2020.1787304 to 10.1007/978-3-319-70942-0_25 already exists, not inserted.
+2024-06-07 16:50:04,425 - INFO - api_main - Processed 42/1419 DOIs.
+2024-06-07 16:50:04,426 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/978-3-319-75383-6_94
+2024-06-07 16:50:04,426 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:04,680 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/978-3-319-75383-6_94 HTTP/1.1" 200 1437
+2024-06-07 16:50:04,681 - INFO - api_main - Processed 43/1419 DOIs.
+2024-06-07 16:50:04,681 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/978-3-319-98648-7_29
+2024-06-07 16:50:04,682 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:04,931 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/978-3-319-98648-7_29 HTTP/1.1" 200 6032
+2024-06-07 16:50:04,933 - INFO - api_main - Processed 44/1419 DOIs.
+2024-06-07 16:50:04,933 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/978-3-642-16558-0_36
+2024-06-07 16:50:04,934 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:05,283 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/978-3-642-16558-0_36 HTTP/1.1" 200 15267
+2024-06-07 16:50:05,286 - INFO - api_main - Processed 45/1419 DOIs.
+2024-06-07 16:50:05,286 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/978-94-017-7515-1_7
+2024-06-07 16:50:05,287 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:05,528 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/978-94-017-7515-1_7 HTTP/1.1" 200 2524
+2024-06-07 16:50:05,529 - INFO - api_main - Processed 46/1419 DOIs.
+2024-06-07 16:50:05,529 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/978-981-10-5657-4_6
+2024-06-07 16:50:05,530 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:05,787 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/978-981-10-5657-4_6 HTTP/1.1" 200 3417
+2024-06-07 16:50:05,788 - INFO - api_main - Processed 47/1419 DOIs.
+2024-06-07 16:50:05,788 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/bf02686296
+2024-06-07 16:50:05,789 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:06,046 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/bf02686296 HTTP/1.1" 200 4867
+2024-06-07 16:50:06,047 - INFO - api_main - Processed 48/1419 DOIs.
+2024-06-07 16:50:06,047 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/bf02706246
+2024-06-07 16:50:06,048 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
+2024-06-07 16:50:06,393 - DEBUG - urllib3.connectionpool - https://opencitations.net:443 "GET /index/api/v2/citations/doi:10.1007/bf02706246 HTTP/1.1" 200 15979
+2024-06-07 16:50:06,396 - INFO - api_main - Processed 49/1419 DOIs.
+2024-06-07 16:50:06,396 - DEBUG - api_utils - Fetching citations for DOI: 10.1007/s00158-016-1579-y
+2024-06-07 16:50:06,397 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): opencitations.net:443
