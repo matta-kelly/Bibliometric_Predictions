@@ -1,4 +1,3 @@
-import json
 from transformers import BertTokenizer, BertModel
 import torch
 import feature_db_utils

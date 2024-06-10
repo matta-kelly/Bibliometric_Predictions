@@ -1,7 +1,6 @@
 import pandas as pd
 import torch
 from torch_geometric.data import HeteroData
-from torch_geometric.transforms import ToUndirected
 import sqlite3
 import json
 
@@ -28,22 +27,26 @@ journals_df = load_data_from_db('Journals', conn)
 data = HeteroData()
 
 # Add nodes for Papers
-data['paper'].x = torch.tensor(papers_df.drop(columns=['doi', 'title', 'title_embedding']).values, dtype=torch.float)
+paper_features = papers_df[['citation_count', 'reference_count', 'influential_citation_count', 'embedding', 'title_embedding']].applymap(json.loads)
+data['paper'].x = torch.tensor(paper_features.values.tolist(), dtype=torch.float)
 data['paper'].node_id = torch.tensor(papers_df['doi'].values, dtype=torch.long)
 
 # Add nodes for Authors
-data['author'].x = torch.tensor(authors_df.drop(columns=['author_id']).values, dtype=torch.float)
+author_features = authors_df[['paperCount', 'citationCount', 'hIndex']].astype(float)
+data['author'].x = torch.tensor(author_features.values.tolist(), dtype=torch.float)
 data['author'].node_id = torch.tensor(authors_df['author_id'].values, dtype=torch.long)
 
 # Add nodes for Keywords
-data['keyword'].x = torch.tensor(keywords_df.drop(columns=['id']).values, dtype=torch.float)
+keyword_features = keywords_df[['embedding']].applymap(json.loads)
+data['keyword'].x = torch.tensor(keyword_features.values.tolist(), dtype=torch.float)
 data['keyword'].node_id = torch.tensor(keywords_df['id'].values, dtype=torch.long)
 
 # Add nodes for Journals
-data['journal'].x = torch.tensor(journals_df.drop(columns=['journal_id']).values, dtype=torch.float)
+journal_features = pd.factorize(journals_df['name'])[0]
+data['journal'].x = torch.tensor(journal_features, dtype=torch.long).unsqueeze(1)
 data['journal'].node_id = torch.tensor(journals_df['journal_id'].values, dtype=torch.long)
 
-# Add edges for Authorship (author <-> paper)
+# Add edges for Authorship (paper <-> author)
 source_author = authorship_df['author_id'].values
 target_paper = authorship_df['doi'].values
 data['author', 'writes', 'paper'].edge_index = torch.tensor([source_author, target_paper], dtype=torch.long)
@@ -63,17 +66,7 @@ source_journal = papers_df['journal_id'].values
 target_journal = papers_df['doi'].values
 data['journal', 'publishes', 'paper'].edge_index = torch.tensor([source_journal, target_journal], dtype=torch.long)
 
-# Print the edges before applying ToUndirected to ensure they are correct
-print("Edges before ToUndirected:")
+# Verify the structure of the heterogeneous data object
 print(data)
-
-# Convert undirected edges for all except the 'cites' relationship
-undirected_edge_types = [('author', 'writes', 'paper'), ('paper', 'has', 'keyword'), ('journal', 'publishes', 'paper')]
-for edge_type in undirected_edge_types:
-    data = ToUndirected()(data, edge_types=[edge_type])
-
-# Verify the structure of the heterogeneous data object after transformation
-print("Edges after ToUndirected:")
-#print(data)
 
 conn.close()

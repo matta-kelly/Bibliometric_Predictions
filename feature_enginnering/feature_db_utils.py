@@ -1,6 +1,13 @@
 import sqlite3
 import json
 import logging
+import os
+import sys
+
+# Adjust sys.path before any other imports
+current_path = os.path.abspath(os.path.dirname(__file__))  # Path of the current script
+project_root = os.path.abspath(os.path.join(current_path, '..'))  # Parent directory of the current script
+sys.path.insert(0, project_root)  # Add project root to the start of the search path
 from logging_config import setup_logging
 
 # Setup logging
